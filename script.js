@@ -6,9 +6,19 @@ let removeActiveClasses = () => {
     });
 };
 
+let activatePanel = (panel) => {
+    removeActiveClasses();
+    panel.classList.add('active');
+};
+
 panelsElement.forEach(panel => {
     panel.addEventListener('click', () => {
-        removeActiveClasses();
-        panel.classList.add('active');
+        activatePanel(panel);
+    });
+    panel.addEventListener('mouseover', () => {
+        activatePanel(panel);
     });
 });
+
+
+
