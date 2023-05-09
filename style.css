@@ -2,66 +2,74 @@
 
 
 * {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
-
+    font-family: sans-serif;
 }
 
 .container {
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    width: 90vw;
-
+    justify-content: center;
+    align-items: center;
 }
 
 .panel {
-    background-size: auto 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 80VH;
-    border-radius: 50px;
-    color: #fff;
-    cursor: pointer;
-    flex: 0.5;
+    width: 15vw;
+    height: 90vh;
+    background: whitesmoke no-repeat scroll center/cover;
+    padding: 10px;
     margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px grey;
+    flex: 1;
+    transition: all 0.5s linear;
+    filter: grayscale(1);
     position: relative;
-    transition: flex 0.7s ease-in;
 }
 
-.panel h3 {
-    font-size: 24px;
+.panel h1 {
+    transition: all 0.5s linear;
+    text-shadow: 0 0 5px grey;
+    color: white;
+    transform: rotate(-90deg);
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    margin: 0;
-    opacity: 0;
+    left: 50px;
+    bottom: 100px;
 }
 
-.panel.active {
+.active {
     flex: 5;
+    filter: grayscale(0);
 }
 
-.panel.active h3 {
-    opacity: 1;
+.active h1 {
+    transform: rotate(0deg);
+    left: 50px;
+    top: 50px;
 }
 
-@media(max-width: 480px) {
-    .container {
-        width: 100vw;
-    }
+#panel-1 {
+    background-image: url(Image/Hong-Kong.jpg);
+}
 
-    .panel:nth-of-type(4),
-    .panel:nth-of-type(5) {
-        display: none;
-    }
+#panel-2 {
+    background-image: url(Image/Singapore.jpg);
+}
 
+#panel-3 {
+    background-image: url(Image/China.jpg);
+}
+
+#panel-4 {
+    background-image: url(Image/Thailand.jpg);
+}
+
+#panel-5 {
+    background-image: url(Image/Germany.jpg);
 }
